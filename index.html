@@ -15,28 +15,33 @@
   /* the book's serif for the loader (the same files the book uses, so they load once) */
   @font-face { font-family: "Source Serif 4 Variable"; font-style: italic; font-display: block; font-weight: 200 900; src: url("./assets/source-serif-4-latin-wght-italic-B-rCj6ir.woff2") format("woff2-variations"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
   @font-face { font-family: "Source Serif 4 Variable"; font-style: normal; font-display: block; font-weight: 200 900; src: url("./assets/source-serif-4-latin-wght-normal-DMe4EKeb.woff2") format("woff2-variations"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-  /* the loader: on the book's paper, "Techartist" writes itself in ink, letter by letter; a drop of energy falls in
+  /* the loader: "Hamse-Mo" writes first, then "Techatist"; a drop of energy falls in
      as the dot of the i and glows through the eight store colours of the jars while the book loads */
   #loader { position: fixed; inset: 0; display: grid; place-items: center; background: radial-gradient(ellipse at 50% 44%, #fbf6ea 0%, #efe6d3 58%, #ddd1b9 100%); z-index: 5; transition: opacity .7s; padding: 24px; text-align: center; }
   #loader .mark { display: grid; justify-items: center; color: var(--ink); }
   #loader .ta { font: italic 560 clamp(54px, 10vw, 104px)/1.05 "Source Serif 4 Variable", Georgia, serif; letter-spacing: -0.005em; display: inline-flex; align-items: baseline; }
+  #loader .ta.brand { font-size: clamp(36px, 6.5vw, 64px); margin-top: 0.08em; opacity: 0.92; }
   #loader .ta i { font-style: inherit; display: inline-block; clip-path: inset(-20% 100% -20% 0); animation: write .16s linear forwards; }
-  #loader .ta i:nth-child(1) { animation-delay: .15s } #loader .ta i:nth-child(2) { animation-delay: .29s } #loader .ta i:nth-child(3) { animation-delay: .41s } #loader .ta i:nth-child(4) { animation-delay: .53s } #loader .ta i:nth-child(5) { animation-delay: .67s }
-  #loader .ta i:nth-child(6) { animation-delay: .80s } #loader .ta i:nth-child(7) { animation-delay: .91s } #loader .ta i:nth-child(8) { animation-delay: 1.03s } #loader .ta i:nth-child(9) { animation-delay: 1.12s } #loader .ta i:nth-child(10) { animation-delay: 1.24s }
+  /* Hamse-Mo */
+  #loader .ta.name i:nth-child(1) { animation-delay: .15s } #loader .ta.name i:nth-child(2) { animation-delay: .29s } #loader .ta.name i:nth-child(3) { animation-delay: .41s } #loader .ta.name i:nth-child(4) { animation-delay: .53s }
+  #loader .ta.name i:nth-child(5) { animation-delay: .67s } #loader .ta.name i:nth-child(6) { animation-delay: .80s } #loader .ta.name i:nth-child(7) { animation-delay: .91s } #loader .ta.name i:nth-child(8) { animation-delay: 1.03s }
+  /* Techatist — starts after Hamse-Mo */
+  #loader .ta.brand i:nth-child(1) { animation-delay: 1.35s } #loader .ta.brand i:nth-child(2) { animation-delay: 1.49s } #loader .ta.brand i:nth-child(3) { animation-delay: 1.61s } #loader .ta.brand i:nth-child(4) { animation-delay: 1.73s }
+  #loader .ta.brand i:nth-child(5) { animation-delay: 1.87s } #loader .ta.brand i:nth-child(6) { animation-delay: 2.00s } #loader .ta.brand i:nth-child(7) { animation-delay: 2.11s } #loader .ta.brand i:nth-child(8) { animation-delay: 2.23s } #loader .ta.brand i:nth-child(9) { animation-delay: 2.35s }
   @keyframes write { to { clip-path: inset(-20% 0 -20% 0); } }
   #loader .ta .ii { position: relative; clip-path: none; animation: none; }
-  #loader .ta .ii b { display: inline-block; clip-path: inset(-20% 100% -20% 0); animation: write .16s 1.03s linear forwards; font-weight: inherit; }
+  #loader .ta .ii b { display: inline-block; clip-path: inset(-20% 100% -20% 0); animation: write .16s 2.11s linear forwards; font-weight: inherit; }
   #loader .ta .drop { position: absolute; left: 52%; top: 0.08em; width: 0.15em; height: 0.15em; margin-left: -0.075em; border-radius: 50%; color: #2f7bff; background: currentColor; box-shadow: 0 0 0.08em currentColor, 0 0 0.3em currentColor; opacity: 0; transform: translateY(-1.4em);
-    animation: drop .55s 1.42s cubic-bezier(.55,0,1,.45) forwards, stores 3.2s 2.0s linear infinite; }
+    animation: drop .55s 2.50s cubic-bezier(.55,0,1,.45) forwards, stores 3.2s 3.1s linear infinite; }
   @keyframes drop { 0% { opacity: 0; transform: translateY(-1.4em); } 20% { opacity: 1; } 78% { transform: translateY(0) scale(1.25, 0.75); } 90% { transform: translateY(-0.06em) scale(0.92, 1.08); } 100% { opacity: 1; transform: none; } }
   @keyframes stores { 0%, 100% { color: #2f7bff; } 12.5% { color: #8a4dff; } 25% { color: #ff3fb4; } 37.5% { color: #ff7a1c; } 50% { color: #26c75a; } 62.5% { color: #e8233a; } 75% { color: #18c4dc; } 87.5% { color: #ffcf1a; } }
   #loader .flourish { width: clamp(150px, 26vw, 270px); height: auto; margin-top: -0.2em; overflow: visible; }
-  #loader .flourish path { fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linecap: round; stroke-dasharray: 230; stroke-dashoffset: 230; animation: flourish .55s 1.45s cubic-bezier(.4,0,.2,1) forwards; }
+  #loader .flourish path { fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linecap: round; stroke-dasharray: 230; stroke-dashoffset: 230; animation: flourish .55s 2.65s cubic-bezier(.4,0,.2,1) forwards; }
   @keyframes flourish { to { stroke-dashoffset: 0; } }
-  #loader .by { margin-top: 14px; font: 600 11px/1 "Source Serif 4 Variable", Georgia, serif; letter-spacing: 0.32em; text-transform: uppercase; color: var(--accent); opacity: 0; animation: fadein .6s 1.75s forwards; }
-  #loader .title { margin-top: 10px; font: 600 clamp(24px, 3.4vw, 30px)/1.1 "Source Serif 4 Variable", Georgia, serif; letter-spacing: 0.01em; opacity: 0; animation: fadein .6s 1.9s forwards; }
-  #loader .sub { margin-top: 6px; font: italic 400 15px/1.3 "Source Serif 4 Variable", Georgia, serif; color: #5a5448; opacity: 0; animation: fadein .6s 2.0s forwards; }
-  #loader .pen { margin-top: 16px; opacity: 0; animation: fadein .5s 2.2s forwards; }
+  #loader .by { margin-top: 14px; font: 600 11px/1 "Source Serif 4 Variable", Georgia, serif; letter-spacing: 0.32em; text-transform: uppercase; color: var(--accent); opacity: 0; animation: fadein .6s 2.95s forwards; }
+  #loader .title { margin-top: 10px; font: 600 clamp(24px, 3.4vw, 30px)/1.1 "Source Serif 4 Variable", Georgia, serif; letter-spacing: 0.01em; opacity: 0; animation: fadein .6s 3.1s forwards; }
+  #loader .sub { margin-top: 6px; font: italic 400 15px/1.3 "Source Serif 4 Variable", Georgia, serif; color: #5a5448; opacity: 0; animation: fadein .6s 3.2s forwards; }
+  #loader .pen { margin-top: 16px; opacity: 0; animation: fadein .5s 3.4s forwards; }
   #loader .pen path { stroke-dasharray: 120; animation: pen 1.6s ease-in-out infinite; }
   @keyframes pen { 0% { stroke-dashoffset: 120; } 55% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -120; } }
   @keyframes fadein { to { opacity: 1; } }
@@ -69,10 +74,11 @@
 <div id="ui"></div>
 <main id="a11y" class="sr" aria-label="Text version of the book"></main>
 <div id="a11yLive" class="sr" aria-live="polite" aria-atomic="true"></div>
-<div id="copy">© 2026 Techartist</div>
+<div id="copy">© 2026 Hamse-Mo · Techatist</div>
 <div id="loader" role="status" aria-live="polite">
   <div class="mark">
-    <div class="ta" role="img" aria-label="Techartist"><i>T</i><i>e</i><i>c</i><i>h</i><i>a</i><i>r</i><i>t</i><i class="ii"><b>ı</b><span class="drop"></span></i><i>s</i><i>t</i></div>
+    <div class="ta name" role="img" aria-label="Hamse-Mo"><i>H</i><i>a</i><i>m</i><i>s</i><i>e</i><i>-</i><i>M</i><i>o</i></div>
+    <div class="ta brand" role="img" aria-label="Techatist"><i>T</i><i>e</i><i>c</i><i>h</i><i>a</i><i>t</i><i class="ii"><b>ı</b><span class="drop"></span></i><i>s</i><i>t</i></div>
     <svg class="flourish" viewBox="0 0 230 14" aria-hidden="true"><path d="M4 9 C 48 3, 92 12, 132 7 S 200 3, 226 8"/></svg>
     <span class="by">presents</span>
     <span class="title">Every Joule</span>
