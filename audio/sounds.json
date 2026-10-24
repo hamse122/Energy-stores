@@ -1,0 +1,153 @@
+{
+ "_": "Every Joule sound sprite, cut by tools/audio/cut.mjs from CC0 recordings (see CREDITS.md). Times are seconds from the one-sample marker at the start of sfx.mp3 (find it in the decoded buffer). loop: true means each [start, duration] is a seamless loop region; layers are crossfaded loops played together.",
+ "file": "sfx.mp3",
+ "sampleRate": 44100,
+ "marker": true,
+ "sounds": {
+  "pageTurn": {
+   "loop": false,
+   "variants": [
+    [
+     0.05002,
+     0.63499
+    ],
+    [
+     0.73501,
+     0.48
+    ],
+    [
+     1.26501,
+     0.47
+    ]
+   ]
+  },
+  "riffle": {
+   "loop": false,
+   "variants": [
+    [
+     1.78501,
+     0.99
+    ]
+   ]
+  },
+  "flap": {
+   "loop": false,
+   "variants": [
+    [
+     2.82501,
+     0.56
+    ]
+   ]
+  },
+  "pen": {
+   "loop": true,
+   "variants": [
+    [
+     3.48501,
+     1
+    ]
+   ]
+  },
+  "bookThud": {
+   "loop": false,
+   "variants": [
+    [
+     4.58501,
+     0.44308
+    ],
+    [
+     5.0781,
+     0.49206
+    ]
+   ]
+  },
+  "roll": {
+   "loop": true,
+   "variants": [
+    [
+     5.67016,
+     1.08
+    ]
+   ]
+  },
+  "stamp": {
+   "loop": false,
+   "variants": [
+    [
+     6.85016,
+     0.35499
+    ]
+   ]
+  },
+  "bounce": {
+   "loop": false,
+   "variants": [
+    [
+     7.25515,
+     0.2
+    ]
+   ]
+  },
+  "bounceBall": {
+   "loop": false,
+   "variants": [
+    [
+     7.50515,
+     0.28712
+    ],
+    [
+     7.84227,
+     0.30508
+    ],
+    [
+     8.19735,
+     0.30109
+    ]
+   ]
+  },
+  "kettle": {
+   "loop": true,
+   "layers": {
+    "heat": [
+     8.59844,
+     3
+    ],
+    "boil": [
+     11.74844,
+     3
+    ]
+   }
+  },
+  "kettleClick": {
+   "loop": false,
+   "variants": [
+    [
+     14.84844,
+     0.17206
+    ]
+   ]
+  },
+  "springStretch": {
+   "loop": true,
+   "variants": [
+    [
+     15.1205,
+     1.4
+    ]
+   ]
+  },
+  "springRelease": {
+   "loop": false,
+   "variants": [
+    [
+     16.6205,
+     1.56209
+    ],
+    [
+     18.23259,
+     1.3381
+    ]
+   ]
+  }
+ }
+}
